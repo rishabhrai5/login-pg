@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function toggleForm() {
+            const signInForm = document.getElementById('sign-in-form');
+            const signUpForm = document.getElementById('sign-up-form');
+            signInForm.classList.toggle('hidden');
+            signUpForm.classList.toggle('hidden');
+        }
+    </script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="bg-white p-8 rounded shadow-lg w-96">
+        <div id="sign-in-form">
+            <h2 class="text-center text-2xl font-bold mb-4">Sign In</h2>
+            <form action="/signin" method="post" class="space-y-4">
+                <div>
+                    <label for="email" class="block text-sm font-medium">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your email"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500" required>
+                </div>
+                <div>
+                    <label for="password" class="block text-sm font-medium">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Your password"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500" required>
+                </div>
+                <button type="submit"
+                    class="w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700 transition">Sign In</button>
+            </form>
+            <p class="text-center text-sm mt-4">Don't have an account? <a href="#" class="text-indigo-600" onclick="toggleForm()">Sign up here</a></p>
+        </div>
+
+        <div id="sign-up-form" class="hidden">
+            <h2 class="text-center text-2xl font-bold mb-4">Sign Up</h2>
+            <form action="/signup" method="post" class="space-y-4">
+                <div>
+                    <label for="name" class="block text-sm font-medium">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500" required>
+                </div>
+                <div>
+                    <label for="email-signup" class="block text-sm font-medium">Email</label>
+                    <input type="email" id="email-signup" name="email" placeholder="Your email"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500" required>
+                </div>
+                <div>
+                    <label for="password-signup" class="block text-sm font-medium">Password</label>
+                    <input type="password" id="password-signup" name="password" placeholder="Your password"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500" required>
+                </div>
+                <div>
+                    <label for="confirm-password" class="block text-sm font-medium">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm password"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500" required>
+                </div>
+                <button type="submit"
+                    class="w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700 transition">Sign Up</button>
+            </form>
+            <p class="text-center text-sm mt-4">Already have an account? <a href="#" class="text-indigo-600" onclick="toggleForm()">Sign in here</a></p>
+        </div>
+    </div>
+</body>
+</html>
